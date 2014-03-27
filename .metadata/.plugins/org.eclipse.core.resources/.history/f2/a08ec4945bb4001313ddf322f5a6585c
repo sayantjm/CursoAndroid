@@ -1,0 +1,18 @@
+package es.jmperales.mislugares;
+
+public class GeoPunto {
+	private double longitud;
+	private double latitud;
+	
+	public GeoPunto(double longitud, double latitud) {
+		super();
+		this.longitud = longitud;
+		this.latitud = latitud;
+	}
+
+	@Override
+	public String toString() {
+		return "GeoPunto [longitud=" + longitud + ", latitud=" + latitud + "]";
+	}
+	
+}

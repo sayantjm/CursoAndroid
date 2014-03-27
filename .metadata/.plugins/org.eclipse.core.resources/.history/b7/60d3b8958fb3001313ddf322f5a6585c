@@ -1,0 +1,7 @@
+package es.jmperales.mislugares;
+
+import android.preference.PreferenceActivity;
+
+public class Preferencias extends PreferenceActivity {
+
+}
