@@ -47,14 +47,20 @@ public final class R {
         public static final int LinearLayout1=0x7f0a0001;
         public static final int RelativeLayout1=0x7f0a000b;
         public static final int TextView01=0x7f0a0000;
-        public static final int acercaDe=0x7f0a002b;
+        public static final int accion_borrar=0x7f0a0032;
+        public static final int accion_cancelar=0x7f0a002a;
+        public static final int accion_compartir=0x7f0a002f;
+        public static final int accion_editar=0x7f0a0031;
+        public static final int accion_guardar=0x7f0a002b;
+        public static final int accion_llegar=0x7f0a0030;
+        public static final int acercaDe=0x7f0a002d;
         public static final int btnAcercaDe=0x7f0a0005;
         public static final int btnMostrar=0x7f0a0003;
         public static final int btnPreferencias=0x7f0a0004;
         public static final int btnSalir=0x7f0a0006;
         public static final int comboTipo=0x7f0a000f;
         public static final int comentario=0x7f0a0023;
-        public static final int config=0x7f0a002a;
+        public static final int config=0x7f0a002c;
         public static final int direccion=0x7f0a001d;
         public static final int fecha=0x7f0a0025;
         public static final int foto=0x7f0a0029;
@@ -78,7 +84,7 @@ public final class R {
         public static final int logo_telefono=0x7f0a001e;
         public static final int logo_tipo=0x7f0a001a;
         public static final int logo_url=0x7f0a0020;
-        public static final int menu_buscar=0x7f0a002c;
+        public static final int menu_buscar=0x7f0a002e;
         public static final int nombre=0x7f0a0019;
         public static final int scrollView1=0x7f0a0018;
         public static final int tableRow1=0x7f0a0007;
@@ -97,8 +103,9 @@ public final class R {
         public static final int vista_lugar=0x7f030003;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
-        public static final int vista_lugar=0x7f090001;
+        public static final int edicion_lugar=0x7f090000;
+        public static final int main=0x7f090001;
+        public static final int vista_lugar=0x7f090002;
     }
     public static final class string {
         public static final int action_settings=0x7f070001;

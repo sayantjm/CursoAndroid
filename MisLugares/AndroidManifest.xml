@@ -25,6 +25,7 @@
         <activity android:name="AcercaDe" android:theme="@android:style/Theme.Dialog" android:label="Acerca De ..."></activity>
         <activity android:name="Preferencias" android:theme="@android:style/Theme.Black" android:label="Preferencias"></activity>
         <activity android:name=".VistaLugar" android:label="Vista Lugar"></activity>
+        <activity android:name=".EdicionLugar" android:label="Editar Lugar"></activity>
     </application>
 
 </manifest>

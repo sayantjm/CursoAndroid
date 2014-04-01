@@ -4,7 +4,12 @@ import java.text.DateFormat;
 import java.util.Date;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -24,6 +29,59 @@ public class VistaLugar extends Activity {
         id = extras.getLong("id", -1);
         lugar = Lugares.elemento((int) id);
         
+        actualizarVistas();
+    }
+    
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.vista_lugar, menu);            
+        return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+          switch(item.getItemId()) {
+          case R.id.accion_compartir:
+                 return true;
+          case R.id.accion_llegar:
+                 return true;  
+          case R.id.accion_editar:
+        	  	lanzarEditarLugar(null, id);
+                 return true;
+          case R.id.accion_borrar:
+        	  	 borrarItem((int) id);
+                 return true;
+          default:
+                 return super.onOptionsItemSelected(item);
+          }
+    }
+    
+    public void borrarItem(final int id) {
+		new AlertDialog.Builder(this).setTitle("Borrado de lugar")
+		.setMessage("¿Estás seguro que quieres eliminar este lugar?")
+		.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {				
+				Lugares.borrar((int) id);
+				finish();
+			}
+		}).setNegativeButton("Cancelar", null).show();
+    }
+    
+	public void lanzarEditarLugar(View view, long id) {
+		Intent i = new Intent(this, EdicionLugar.class);
+		i.putExtra("id", id);
+		startActivityForResult(i, 1234);
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	       if (requestCode == 1234) {
+	             actualizarVistas();
+	             findViewById(R.id.scrollView1).invalidate();
+	       }
+	}
+	
+	public void actualizarVistas() {
         TextView nombre = (TextView) findViewById(R.id.nombre);
         nombre.setText(lugar.getNombre());
         
@@ -87,6 +145,6 @@ public class VistaLugar extends Activity {
                                                 float valor, boolean fromUser) {
                     lugar.setValoracion(valor);
                 }
-        });
-    }
+        });   		
+	}
 }
